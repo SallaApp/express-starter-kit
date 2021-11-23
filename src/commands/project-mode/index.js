@@ -28,7 +28,7 @@ class Command {
           await replace({
             files: app_path + "/app.js",
             from: '//"{%EASY_MODE_CODE%}"',
-            to: `console.log("Remote App Url : NO REMOTE URL (create project with easy mode to have remote url) ");`,
+            to: `console.log("    =>    Remote App Url : NO REMOTE URL (create project with easy mode to have remote url) ");`,
           });
         }
         this._messages_output.push(

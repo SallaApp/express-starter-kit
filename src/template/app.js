@@ -10,10 +10,6 @@ const port = 8081;
 console.log("Output URLs:");
 //"{%EASY_MODE_CODE%}"
 
-console.log("Local App Url", `http://localhost:${port}`);
-console.log("Webhook Url:", `http://localhost:${port}/webhook`);
-console.log("OAuth Callback Url:", `http://localhost:${port}/oauth/callback`);
-
 // Import Salla APIs
 const SallaAPIFactory = require("@salla.sa/passport-strategy");
 const SallaORM = require("./database/%{ORM_SELECTED}");
@@ -191,7 +187,12 @@ app.get("/logout", function (req, res) {
 });
 
 app.listen(port, function () {
-  console.log("App is listening on port " + port);
+  console.log("    =>    Local App Url", `http://localhost:${port}`);
+  console.log("    =>    Webhook Url:", `http://localhost:${port}/webhook`);
+  console.log(
+    "    =>    OAuth Callback Url:",
+    `http://localhost:${port}/oauth/callback`
+  );
 });
 
 // Simple route middleware to ensure user is authenticated.

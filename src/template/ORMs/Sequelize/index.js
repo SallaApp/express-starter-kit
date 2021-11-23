@@ -11,7 +11,7 @@ const sequelize = new Sequelize({
   host: process.env.DATABASE_SERVER,
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_PASSWORD,
-  database: "test",
+  database: "my_app_db",
   dialect: "mysql",
   logging: true,
 });

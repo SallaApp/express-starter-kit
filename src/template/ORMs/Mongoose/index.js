@@ -1,7 +1,7 @@
 let mongoose = require("mongoose");
 
 const server = process.env.DATABASE_SERVER; // REPLACE WITH YOUR DB SERVER
-const database = "test"; // REPLACE WITH YOUR DB NAME
+const database = "my_app_db"; // REPLACE WITH YOUR DB NAME
 const username = process.env.DATABASE_USERNAME; // REPLACE WITH YOUR DB NAME
 const password = process.env.DATABASE_PASSWORD; // REPLACE WITH YOUR DB NAME
 

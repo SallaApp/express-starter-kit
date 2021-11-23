@@ -102,7 +102,11 @@ That is all!
 
 The installation process is straightforward as you will see in the below steps.
 
-1. In your MySql Database: **create a database** with any name for example `my_app_db`.
+1. Install project creator using npm .
+
+```sh
+npm install @salla.sa/express-starter-kit
+```
 
 2. In your command line: **run** the following `create-project` npm command to create your Express starter App project.
 
@@ -123,7 +127,7 @@ The above `create-project` will take you through a step-by-step process in which
 
 1. In your command line: **Run** `npm run start-app` command
 
-# HERE IMAGE
+![salla-express-starter-kit](./starting-app.png)
 
 Now you can open your browser to view your App at `Remote App Url` in the [output URLs.](#output-urls). 🎉
 
@@ -155,7 +159,7 @@ While creating your App in the [Salla Partners Portal](https://salla.partners/),
 > During the setup process, the default _OAuth protocol_ will be set to the `Easy Mode`, which can be configured from the file [`.env`](.env).
 > All of the setup's values/keys are stored in the `.env` file as we can see in the below image.
 
-<p align="center"><img src="https://i.imgur.com/TvSCAWC.png" width="660" alt="Salla Laravel App folder structure"></p>
+![salla-express-starter-kit](./project-env.png)
 
 #### Easy Mode <span id='auth-modes.easy'>
 
