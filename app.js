@@ -6,26 +6,30 @@ const passport = require("passport");
 const consolidate = require("consolidate");
 const getUnixTimestamp = require("./helpers/getUnixTimestamp");
 const bodyParser = require("body-parser");
-const port = 8081;
-console.log("Output URLs:");
-//"{%EASY_MODE_CODE%}"
-
-// Import Salla APIs
-const SallaAPIFactory = require("@salla.sa/passport-strategy");
-const SallaORM = require("./database/%{ORM_SELECTED}");
-const SallaWebhook = require("@salla.sa/webhooks-actions");
+const port = process.argv[2] || 8081;
 
 /*
   Create a .env file in the root directory of your project. 
   Add environment-specific variables on new lines in the form of NAME=VALUE. For example:
-  CLIENT_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  SALLA_OAUTH_CLIENT_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  SALLA_OAUTH_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   ...
 */
-const CLIENT_ID = process.env.CLIENT_ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const {
+  SALLA_OAUTH_CLIENT_ID,
+  SALLA_OAUTH_CLIENT_SECRET,
+  SALLA_OAUTH_CLIENT_REDIRECT_URI,
+  SALLA_WEBHOOK_SECRET,
+  SALLA_DATABASE_ORM,
+} = process.env;
 
-SallaWebhook.setSecret(process.env.WEBHOOK_SECRET);
+// Import Salla APIs
+const SallaAPIFactory = require("@salla.sa/passport-strategy");
+const SallaDatabase = require("./database")(SALLA_DATABASE_ORM || "Sequelize");
+const SallaWebhook = require("@salla.sa/webhooks-actions");
+
+SallaWebhook.setSecret(SALLA_WEBHOOK_SECRET);
+
 // Add Listners
 SallaWebhook.on("app.installed", (eventBody, userArgs) => {
   // handel app.installed event
@@ -39,15 +43,36 @@ SallaWebhook.on("all", (eventBody, userArgs) => {
 
 // we initialize our Salla API
 const SallaAPI = new SallaAPIFactory({
-  clientID: CLIENT_ID,
-  clientSecret: CLIENT_SECRET,
-  callbackURL: "http://localhost:8081/oauth/callback",
+  clientID: SALLA_OAUTH_CLIENT_ID,
+  clientSecret: SALLA_OAUTH_CLIENT_SECRET,
+  callbackURL: SALLA_OAUTH_CLIENT_REDIRECT_URI,
 });
 
 // set Listner on auth success
 SallaAPI.onAuth(async (accessToken, refreshToken, expires_in, data) => {
-  // examples of database
-  "%{DATABASE_ORM_CODE_HERE}";
+  SallaDatabase.connect()
+    .then(async (connection) => {
+      let user_id = await SallaDatabase.saveUser({
+        username: data.name,
+        email: data.email,
+        email_verified_at: getUnixTimestamp(),
+        verified_at: getUnixTimestamp(),
+        password: "",
+        remember_token: "",
+      });
+      await SallaDatabase.saveOauth(
+        {
+          merchant: data.store.id,
+          access_token: accessToken,
+          expires_in: expires_in,
+          refresh_token: refreshToken,
+        },
+        user_id
+      );
+    })
+    .catch((err) => {
+      console.log("Error connecting to database: ", err);
+    });
 });
 
 //   Passport session setup.
@@ -187,12 +212,7 @@ app.get("/logout", function (req, res) {
 });
 
 app.listen(port, function () {
-  console.log("    =>    Local App Url", `http://localhost:${port}`);
-  console.log("    =>    Webhook Url:", `http://localhost:${port}/webhook`);
-  console.log(
-    "    =>    OAuth Callback Url:",
-    `http://localhost:${port}/oauth/callback`
-  );
+  console.log("Listening on port " + port);
 });
 
 // Simple route middleware to ensure user is authenticated.
