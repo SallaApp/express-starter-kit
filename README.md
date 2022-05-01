@@ -12,8 +12,8 @@
     <a href="https://salla.dev/"><strong>Explore our blogs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/SallaApp/Laravel-Start-Kit/issues/new">Report Bug</a> · 
-    <a href="https://github.com/SallaApp/Laravel-Start-Kit/discussions/new">Request Feature</a> . <a href="https://t.me/salladev">&lt;/Salla Developers&gt;</a>
+    <a href="https://github.com/SallaApp/express-starter-kit/issues/new">Report Bug</a> · 
+    <a href="https://github.com/SallaApp/express-starter-kit/discussions/new">Request Feature</a> . <a href="https://t.me/salladev">&lt;/Salla Developers&gt;</a>
   </p>
 </div>
 
@@ -125,18 +125,13 @@ The above `create-project` will take you through a step-by-step process in which
 
 ## Usage
 
-1. In your command line: **Run** `npm run start-app` command
+With [Salla CLI](https://github.com/SallaApp/Salla-CLI) installed, **run** the following command to create your Express starter app project: `salla app create` and follow on-screen instructions.
 
-![salla-express-starter-kit](./starting-app.png)
+List of existing apps assocaited to your account will be displayed as well as an option to create your app on [Salla Partners Portal](https://salla.partners/). Afterwards, you will be presented with easy-to fill in information to create your app.
 
-Now you can open your browser to view your App at `Remote App Url` in the [output URLs.](#output-urls). 🎉
+![Salla App Create Command](https://i.ibb.co/92tKgZz/Clean-Shot-2021-12-27-at-21-31-15.gif)
 
-2. Login to the Laravel App with the demo account: Email: `awesome@salla.dev`, Password: `in ksa`
-3. Click the button to request the _Access Token_.
-4. The Laravel App will redirect you to Merchant Auth Page.
-5. Login using a Merchant Account (or the demo store of your app).
-6. Give access to your App.
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 > If you are using [Easy mode.](#auth-modes.easy) the access token will push to the action ([`app.store.authorize`](app\template\Actions\app\store.authorize.js)) via webhook
 >
 > If you are using [Custom mode.](#auth-modes.custom) the browser will redirect you again to the [`store.authorize.js file`](app\template\Actions\app\store.authorize.js).
