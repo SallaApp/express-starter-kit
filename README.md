@@ -102,24 +102,12 @@ That is all!
 
 The installation process is straightforward as you will see in the below steps.
 
-1. Install project creator using npm .
+1. In your MySql Database: **create a database** with any name for example `laravel`.
+2. Install [Salla CLI](https://github.com/SallaApp/Salla-CLI) via [NPM](https://www.npmjs.com/): `npm install @salla.sa/cli -g` where you will be able to run the `salla` binary commands such as `salla app create` and `salla app create-webhook <event.name>`
+<!-- 3. [Salla CLI](https://github.com/SallaApp/Salla-CLI): to run the `salla` binary commands such as `salla app create` and `salla app create-webhook <event.name>` -->
 
-```sh
-npm install @salla.sa/express-starter-kit
-```
-
-2. In your command line: **run** the following `create-project` npm command to create your Express starter App project.
-
-```sh
-npm run create-project {your-awesome-app}
-```
-
-The above `create-project` will take you through a step-by-step process in which you'll enter your App's _Client ID, Client Secret Key, and Webhook Secret Key_, which you can get from your App dashboard in the Partners Panel, as well as your database name, which is set to `my_app_db` by default.
-
-> The step will ask you to select the authorization mode for your App, which can be [Easy or Custom mode.](#auth-modes)
-> In case you selected the _Custom_ mode for your App authorization, you will need to enter the **same callback Url you already entered in your App dashboard at the [Salla Partner Portal](https://salla.partners/)**
-
-![salla-express-starter-kit](./salla-output.png)
+<!-- > The step will ask you to select the authorization mode for your App, which can be [Easy or Custom mode.](#auth-modes)
+> In case you selected the _Custom_ mode for your App authorization, you will need to enter the **same callback Url you already entered in your App dashboard at the [Salla Partner Portal](https://salla.partners/)** -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
