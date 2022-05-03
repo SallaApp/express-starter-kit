@@ -102,7 +102,7 @@ That is all!
 
 The installation process is straightforward as you will see in the below steps.
 
-1. In your MySql Database: **create a database** with any name for example `laravel`.
+1. In your MySql Database: **create a database** with any name for example `express`.
 2. Install [Salla CLI](https://github.com/SallaApp/Salla-CLI) via [NPM](https://www.npmjs.com/): `npm install @salla.sa/cli -g` where you will be able to run the `salla` binary commands such as `salla app create` and `salla app create-webhook <event.name>`
 <!-- 3. [Salla CLI](https://github.com/SallaApp/Salla-CLI): to run the `salla` binary commands such as `salla app create` and `salla app create-webhook <event.name>` -->
 
