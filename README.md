@@ -265,7 +265,7 @@ Salla already defined a list of the webhooks/actions that are triggered automati
 The setup file can be found in [`src`](https://github.com/SallaApp/express-starter-kit/tree/master/src/setup.js).
 
 ```sh
-npm run create-app YOUR_APP_NAME
+salla app create
 ```
 
 ### Create new Webhook/Action command
@@ -275,7 +275,7 @@ The predefined [Webhooks](#webhooks), events/actions, can be found in folder [`a
 > You may define your own new webhook/action the way fits your App's requirments.
 
 ```sh
-npm run create-webhook YOUR_APP_NAME {event-name}
+salla app create-webhook <event.name>
 ```
 
 <br />
