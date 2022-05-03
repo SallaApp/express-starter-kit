@@ -14,7 +14,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "salla serve",
+    "serve": "salla app serve",
     "dev":"node app.js"
   },
   "license": "ISC",
