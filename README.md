@@ -12,8 +12,8 @@
     <a href="https://salla.dev/"><strong>Explore our blogs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/SallaApp/Laravel-Start-Kit/issues/new">Report Bug</a> · 
-    <a href="https://github.com/SallaApp/Laravel-Start-Kit/discussions/new">Request Feature</a> . <a href="https://t.me/salladev">&lt;/Salla Developers&gt;</a>
+    <a href="https://github.com/SallaApp/express-starter-kit/issues/new">Report Bug</a> · 
+    <a href="https://github.com/SallaApp/express-starter-kit/discussions/new">Request Feature</a> . <a href="https://t.me/salladev">&lt;/Salla Developers&gt;</a>
   </p>
 </div>
 
@@ -102,41 +102,24 @@ That is all!
 
 The installation process is straightforward as you will see in the below steps.
 
-1. Install project creator using npm .
+1. In your MySql Database: **create a database** with any name for example `express`.
+2. Install [Salla CLI](https://github.com/SallaApp/Salla-CLI) via [NPM](https://www.npmjs.com/): `npm install @salla.sa/cli -g` where you will be able to run the `salla` binary commands such as `salla app create` and `salla app create-webhook <event.name>`
+<!-- 3. [Salla CLI](https://github.com/SallaApp/Salla-CLI): to run the `salla` binary commands such as `salla app create` and `salla app create-webhook <event.name>` -->
 
-```sh
-npm install @salla.sa/express-starter-kit
-```
-
-2. In your command line: **run** the following `create-project` npm command to create your Express starter App project.
-
-```sh
-npm run create-project {your-awesome-app}
-```
-
-The above `create-project` will take you through a step-by-step process in which you'll enter your App's _Client ID, Client Secret Key, and Webhook Secret Key_, which you can get from your App dashboard in the Partners Panel, as well as your database name, which is set to `my_app_db` by default.
-
-> The step will ask you to select the authorization mode for your App, which can be [Easy or Custom mode.](#auth-modes)
-> In case you selected the _Custom_ mode for your App authorization, you will need to enter the **same callback Url you already entered in your App dashboard at the [Salla Partner Portal](https://salla.partners/)**
-
-![salla-express-starter-kit](./salla-output.png)
+<!-- > The step will ask you to select the authorization mode for your App, which can be [Easy or Custom mode.](#auth-modes)
+> In case you selected the _Custom_ mode for your App authorization, you will need to enter the **same callback Url you already entered in your App dashboard at the [Salla Partner Portal](https://salla.partners/)** -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Usage
 
-1. In your command line: **Run** `npm run start-app` command
+With [Salla CLI](https://github.com/SallaApp/Salla-CLI) installed, **run** the following command to create your Express starter app project: `salla app create` and follow on-screen instructions.
 
-![salla-express-starter-kit](./starting-app.png)
+List of existing apps assocaited to your account will be displayed as well as an option to create your app on [Salla Partners Portal](https://salla.partners/). Afterwards, you will be presented with easy-to fill in information to create your app.
 
-Now you can open your browser to view your App at `Remote App Url` in the [output URLs.](#output-urls). 🎉
+![Salla App Create Command](https://i.ibb.co/92tKgZz/Clean-Shot-2021-12-27-at-21-31-15.gif)
 
-2. Login to the Laravel App with the demo account: Email: `awesome@salla.dev`, Password: `in ksa`
-3. Click the button to request the _Access Token_.
-4. The Laravel App will redirect you to Merchant Auth Page.
-5. Login using a Merchant Account (or the demo store of your app).
-6. Give access to your App.
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 > If you are using [Easy mode.](#auth-modes.easy) the access token will push to the action ([`app.store.authorize`](app\template\Actions\app\store.authorize.js)) via webhook
 >
 > If you are using [Custom mode.](#auth-modes.custom) the browser will redirect you again to the [`store.authorize.js file`](app\template\Actions\app\store.authorize.js).
@@ -282,7 +265,7 @@ Salla already defined a list of the webhooks/actions that are triggered automati
 The setup file can be found in [`src`](https://github.com/SallaApp/express-starter-kit/tree/master/src/setup.js).
 
 ```sh
-npm run create-app YOUR_APP_NAME
+salla app create
 ```
 
 ### Create new Webhook/Action command
@@ -292,7 +275,7 @@ The predefined [Webhooks](#webhooks), events/actions, can be found in folder [`a
 > You may define your own new webhook/action the way fits your App's requirments.
 
 ```sh
-npm run create-webhook YOUR_APP_NAME {event-name}
+salla app create-webhook <event.name>
 ```
 
 <br />
