@@ -120,6 +120,8 @@ List of existing apps assocaited to your account will be displayed as well as an
 ![Salla App Create Command](https://i.ibb.co/92tKgZz/Clean-Shot-2021-12-27-at-21-31-15.gif)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+__Important Note:__
 > If you are using [Easy mode.](#auth-modes.easy) the access token will push to the action ([`app.store.authorize`](app\template\Actions\app\store.authorize.js)) via webhook
 >
 > If you are using [Custom mode.](#auth-modes.custom) the browser will redirect you again to the [`store.authorize.js file`](app\template\Actions\app\store.authorize.js).
@@ -142,7 +144,7 @@ While creating your App in the [Salla Partners Portal](https://salla.partners/),
 > During the setup process, the default _OAuth protocol_ will be set to the `Easy Mode`, which can be configured from the file [`.env`](.env).
 > All of the setup's values/keys are stored in the `.env` file as we can see in the below image.
 
-![salla-express-starter-kit](./project-env.png)
+![salla-express-starter-kit](./assets/project-env.png)
 
 #### Easy Mode <span id='auth-modes.easy'>
 
