@@ -49,12 +49,15 @@
         <a href="#webhooks">Webhooks</a>
         <ul>
             <li><a href="#order-related-webhooksactions">Order Related Webhooks/Actions</a></li>
-            <li><a href="#products-related-webhooksactions">Products Related Webhooks/Actions</a></li>
+            <li><a href="#product-related-webhooksactions">Product Related Webhooks/Actions</a></li>
+            <li><a href="#shipping-companies-related-webhooksactions">Shipping Companies Related Webhooks/Actions</a></li>
             <li><a href="#customer-related-webhooksactions">Customer Related Webhooks/Actions</a></li>
             <li><a href="#category-related-webhooksactions">Category Related Webhooks/Actions</a></li>
             <li><a href="#brand-related-webhooksactions">Brand Related Webhooks/Actions</a></li>
             <li><a href="#store-related-webhooksactions">Store Related Webhooks/Actions</a></li>
-            <li><a href="#coupon-related-webhooksactions">Coupon Related Webhooks/Actions</a></li>
+            <li><a href="#cart-related-webhooksactions">Cart Related Webhooks/Actions</a></li>
+            <li><a href="#special-offer-webhooksactions">Special Offer Related Webhooks/Actions</a></li>
+            <li><a href="#miscellaneous-related-webhooksactions">Miscellaneous Related Webhooks/Actions</a></li>
       </ul>
     </li>
     <li>
@@ -120,6 +123,8 @@ List of existing apps assocaited to your account will be displayed as well as an
 ![Salla App Create Command](https://i.ibb.co/92tKgZz/Clean-Shot-2021-12-27-at-21-31-15.gif)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+__Important Note:__
 > If you are using [Easy mode.](#auth-modes.easy) the access token will push to the action ([`app.store.authorize`](app\template\Actions\app\store.authorize.js)) via webhook
 >
 > If you are using [Custom mode.](#auth-modes.custom) the browser will redirect you again to the [`store.authorize.js file`](app\template\Actions\app\store.authorize.js).
@@ -142,7 +147,7 @@ While creating your App in the [Salla Partners Portal](https://salla.partners/),
 > During the setup process, the default _OAuth protocol_ will be set to the `Easy Mode`, which can be configured from the file [`.env`](.env).
 > All of the setup's values/keys are stored in the `.env` file as we can see in the below image.
 
-![salla-express-starter-kit](./project-env.png)
+![salla-express-starter-kit](./assets/project-env.png)
 
 #### Easy Mode <span id='auth-modes.easy'>
 
@@ -255,7 +260,7 @@ SallaAPI.requestNewAccessToken(SallaAPI.getRefreshToken())
 [Webhooks](https://docs.salla.dev/docs/merchant/ZG9jOjI0NTE3NDg1-webhook) simplify the communication between your App and [Salla APIs](https://docs.salla.dev/). In this way, you will be notified whenever your app receives payload/data from the Salla APIs. These webhooks are triggered along with many actions such as an order or product being created, a customer logs in, a coupon is applied, and much more.
 
 ### Create new Webhook/Action command
-Salla already defined a list of the webhooks/actions that are triggered automatically. The predefined webhooks/actions can be found in the folder [`app/Actions`](https://github.com/SallaApp/Laravel-Start-Kit/tree/master/app/Actions).
+Salla already defined a list of the webhooks/actions that are triggered automatically. The predefined webhooks/actions can be found in the folder [`app/Actions`](https://github.com/SallaApp/express-starter-kit/tree/master/Actions).
 
 Run the following command to create your webhook event:
 
@@ -293,7 +298,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-#### Products Related Webhooks/Actions
+#### Product Related Webhooks/Actions
 
 | ** Action Name **                                          | ** Description **                                                                    |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------ |
