@@ -49,12 +49,15 @@
         <a href="#webhooks">Webhooks</a>
         <ul>
             <li><a href="#order-related-webhooksactions">Order Related Webhooks/Actions</a></li>
-            <li><a href="#products-related-webhooksactions">Products Related Webhooks/Actions</a></li>
+            <li><a href="#product-related-webhooksactions">Product Related Webhooks/Actions</a></li>
+            <li><a href="#shipping-companies-related-webhooksactions">Shipping Companies Related Webhooks/Actions</a></li>
             <li><a href="#customer-related-webhooksactions">Customer Related Webhooks/Actions</a></li>
             <li><a href="#category-related-webhooksactions">Category Related Webhooks/Actions</a></li>
             <li><a href="#brand-related-webhooksactions">Brand Related Webhooks/Actions</a></li>
             <li><a href="#store-related-webhooksactions">Store Related Webhooks/Actions</a></li>
-            <li><a href="#coupon-related-webhooksactions">Coupon Related Webhooks/Actions</a></li>
+            <li><a href="#cart-related-webhooksactions">Cart Related Webhooks/Actions</a></li>
+            <li><a href="#special-offer-webhooksactions">Special Offer Related Webhooks/Actions</a></li>
+            <li><a href="#miscellaneous-related-webhooksactions">Miscellaneous Related Webhooks/Actions</a></li>
       </ul>
     </li>
     <li>
@@ -295,7 +298,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-#### Products Related Webhooks/Actions
+#### Product Related Webhooks/Actions
 
 | ** Action Name **                                          | ** Description **                                                                    |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------ |
