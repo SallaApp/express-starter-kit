@@ -1,10 +1,10 @@
 /**
- *  this function is exeucted on "project.created" action triggered by Salla .
+ *  this function is exeucted on "order.cancelled" action triggered by Salla .
  *
  * Action Body received from Salla
  * @param {Object} eventBody
  * { 
- *  event: 'project.created',
+ *  event: 'order.cancelled',
     merchant: 472944967,
     created_at: '2021-11-22 13:51:57',
     data:

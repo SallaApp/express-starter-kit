@@ -124,10 +124,11 @@ List of existing apps assocaited to your account will be displayed as well as an
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-__Important Note:__
-> If you are using [Easy mode.](#auth-modes.easy) the access token will push to the action ([`app.store.authorize`](app\template\Actions\app\store.authorize.js)) via webhook
+**Important Note:**
+
+> If you are using [Easy mode.](#auth-modes.easy) the access token will push to the action ([`app.store.authorize`](Actions/app/store.authorize.js)) via webhook
 >
-> If you are using [Custom mode.](#auth-modes.custom) the browser will redirect you again to the [`store.authorize.js file`](app\template\Actions\app\store.authorize.js).
+> If you are using [Custom mode.](#auth-modes.custom) the browser will redirect you again to the [`store.authorize.js file`](Actions/app/store.authorize.js).
 
 #### Output URLs <span id='output-urls'>
 
@@ -152,7 +153,7 @@ While creating your App in the [Salla Partners Portal](https://salla.partners/),
 #### Easy Mode <span id='auth-modes.easy'>
 
 This mode is the default mode for the authorization, which means that the `access token` is generated automatically at Salla's side back to you.
-You may refer to the class [`StoreAuthorize`](app\template\Actions\app\store.authorize.js) which is defined inside [`app\template\Actions\app\store.authorize.js`](app\template\Actions\app\store.authorize.js) to get more details on how to receive and manage the `access token`
+You may refer to the class [`StoreAuthorize`](Actions/app/store.authorize.js) which is defined inside [`Actions/app/store.authorize.js`](Actions/app/store.authorize.js) to get more details on how to receive and manage the `access token`
 
 #### Custom Mode <span id='auth-modes.custom'>
 
@@ -260,6 +261,7 @@ SallaAPI.requestNewAccessToken(SallaAPI.getRefreshToken())
 [Webhooks](https://docs.salla.dev/docs/merchant/ZG9jOjI0NTE3NDg1-webhook) simplify the communication between your App and [Salla APIs](https://docs.salla.dev/). In this way, you will be notified whenever your app receives payload/data from the Salla APIs. These webhooks are triggered along with many actions such as an order or product being created, a customer logs in, a coupon is applied, and much more.
 
 ### Create new Webhook/Action command
+
 Salla already defined a list of the webhooks/actions that are triggered automatically. The predefined webhooks/actions can be found in the folder [`app/Actions`](https://github.com/SallaApp/express-starter-kit/tree/master/Actions).
 
 Run the following command to create your webhook event:
@@ -276,126 +278,127 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 #### Order Related Webhooks/Actions
 
-| ** Action Name **                                                               | ** Description **                                                            |
-| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| [order.created](app/Actions/Order/Created.js)                                   | This indicates a singular order has been created                             |
-| [order.updated](app/Actions/Order/Updated.js)                                   | Details, data and/or content of a specific order have been refreshed updated |
-| [order.status.updated](app/Actions/Order/StatusUpdated.js)                      | Whenever there is an order status update, this is triggered                  |
-| [order.cancelled](app/Actions/Order/Cancelled.js)                               | This happens when an order is cancelled                                      |
-| [order.refunded](app/Actions/Order/Refunded.js)                                 | The refund action to refund the whole order is triggered.                    |
-| [order.deleted](app/Actions/Order/)                                             | This indicates an order has been deleted                                     |
-| [order.products.updated](app/Actions/Order/ProductsUpdated.js)                  | Order products is updated                                                    |
-| [order.payment.updated](app/Actions/Order/PaymentUpdated.js)                    | A payment method has been updated                                            |
-| [order.coupon.updated](app/Actions/Order/CouponUpdated.js)                      | This is triggered whenever a Coupon is updated                               |
-| [order.total.price.updated](app/Actions/Order/TotalPriceUpdated.js)             | A total price of an order has been updated                                   |
-| [order.shipment.creating](app/Actions/Order/ShipmentCreating.js)                | This indicates a new shipment is being created                               |
-| [order.shipment.created](app/Actions/Order/ShipmentCreated.js)                  | This indicates a new shipment has been created                               |
-| [order.shipment.cancelled](app/Actions/Order/ShipmentCancelled.js)              | This indicates a an order shipment has been cancelled                        |
-| [order.shipment.return.creating](app/Actions/Order/ShipmentReturnCreating.js)   | This is triggered when a returned order shipment is being created            |
-| [order.shipment.return.created](app/Actions/Order/ShipmentReturnCreated.js)     | This is triggered when a returned order shipment has been created            |
-| [order.shipment.return.cancelled](app/Actions/Order/ShipmentReturnCancelled.js) | This is triggered when a returned order shipment has been cancelled          |
-| [order.shipping.address.updated](app/Actions/Order/ShippingAddressUpdated.js)   | Occurs when an Order shipping address is updated                             |
+| ** Action Name **                                                             | ** Description **                                                            |
+| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| [order.created](Actions/order/created.js)                                     | This indicates a singular order has been created                             |
+| [order.updated](Actions/order/updated.js)                                     | Details, data and/or content of a specific order have been refreshed updated |
+| [order.status.updated](Actions/order/status.updated.js)                       | Whenever there is an order status update, this is triggered                  |
+| [order.cancelled](Actions/order/cancelled.js)                                 | This happens when an order is cancelled                                      |
+| [order.refunded](Actions/order/refunded.js)                                   | The refund action to refund the whole order is triggered.                    |
+| [order.deleted](Actions/order/deleted.js)                                     | This indicates an order has been deleted                                     |
+| [order.products.updated](Actions/order/products.updated.js)                   | Order products is updated                                                    |
+| [order.payment.updated](Actions/order/payment.updated.js)                     | A payment method has been updated                                            |
+| [order.coupon.updated](Actions/order/coupon.updated.js)                       | This is triggered whenever a Coupon is updated                               |
+| [order.total.price.updated](Actions/order/total.price.updated.js)             | A total price of an order has been updated                                   |
+| [order.shipment.creating](Actions/order/shipment.creating.js)                 | This indicates a new shipment is being created                               |
+| [order.shipment.created](Actions/order/shipment.created.js)                   | This indicates a new shipment has been created                               |
+| [order.shipment.cancelled](Actions/order/shipment.cancelled.js)               | This indicates a an order shipment has been cancelled                        |
+| [order.shipment.return.creating](Actions/order/shipment.return.creating.js)   | This is triggered when a returned order shipment is being created            |
+| [order.shipment.return.created](Actions/order/shipment.return.created.js)     | This is triggered when a returned order shipment has been created            |
+| [order.shipment.return.cancelled](Actions/order/shipment.return.cancelled.js) | This is triggered when a returned order shipment has been cancelled          |
+| [order.shipping.address.updated](Actions/order/shipping.address.updated.js)   | Occurs when an Order shipping address is updated                             |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Product Related Webhooks/Actions
 
-| ** Action Name **                                          | ** Description **                                                                    |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [product.created](app/Actions/Product/Created.js)          | A new product is created. Payload of the new product are to accompanying the product |
-| [product.updated](app/Actions/Product/Updated.js)          | Add/Modify details of a product                                                      |
-| [product.deleted](app/Actions/Product/Deleted.js)          | Delete a product along with all its variants and images                              |
-| [product.available](app/Actions/Product/Available.js)      | Flags a product as stock available                                                   |
-| [product.quantity.low](app/Actions/Product/QuantityLow.js) | Shows warnings whenever a stock is of low quantity                                   |
+| ** Action Name **                                       | ** Description **                                                                    |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [product.created](Actions/product/created.js)           | A new product is created. Payload of the new product are to accompanying the product |
+| [product.updated](Actions/product/updated.js)           | Add/Modify details of a product                                                      |
+| [product.deleted](Actions/product/deleted.js)           | Delete a product along with all its variants and images                              |
+| [product.available](Actions/product/available.js)       | Flags a product as stock available                                                   |
+| [product.quantity.low](Actions/product/quantity.low.js) | Shows warnings whenever a stock is of low quantity                                   |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Shipping Companies Related Webhooks/Actions
 
-| ** Action Name **        | ** Description **                                                                     |
-| ------------------------ | ------------------------------------------------------------------------------------- |
-| shipping.zone.created    | This is triggered when a shipping zone has been created for a custom shipping company |
-| shipping.zone.updated    | This is triggered when a shipping zone has been updated for a custom shipping company |
-| shipping.company.created | This is triggered when a custom shipping company has been created                     |
-| shipping.company.updated | This is triggered when a custom shipping company has been updated                     |
-| shipping.company.deleted | This is triggered when a custom shipping company has been deleted                     |
+| ** Action Name **                                               | ** Description **                                                                     |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [shipping.zone.created](Actions/shipping/zone.created.js)       | This is triggered when a shipping zone has been created for a custom shipping company |
+| [shipping.zone.updated](Actions/shipping/zone.updated.js)       | This is triggered when a shipping zone has been updated for a custom shipping company |
+| [shipping.company.created](Actions/shipping/company.created.js) | This is triggered when a custom shipping company has been created                     |
+| [shipping.company.updated](Actions/shipping/company.updated.js) | This is triggered when a custom shipping company has been updated                     |
+| [shipping.company.deleted](Actions/shipping/company.deleted.js) | This is triggered when a custom shipping company has been deleted                     |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Customer Related Webhooks/Actions
 
-| ** Action Name **                                          | ** Description **                        |
-| ---------------------------------------------------------- | ---------------------------------------- |
-| [customer.created](app/Actions/Customer/Created.js)        | Create a new customer record             |
-| [customer.updated](app/Actions/Customer/Updated.js)        | Update details for a customer            |
-| [customer.login](app/Actions/Customer/Login.js)            | Triggered whenever a customer log in     |
-| [customer.otp.request](app/Actions/Customer/OtpRequest.js) | One-Time Password request for a customer |
+| ** Action Name **                                       | ** Description **                        |
+| ------------------------------------------------------- | ---------------------------------------- |
+| [customer.created](Actions/customer/created.js)         | Create a new customer record             |
+| [customer.updated](Actions/customer/updated.js)         | Update details for a customer            |
+| [customer.login](Actions/customer/login.js)             | Triggered whenever a customer log in     |
+| [customer.otp.request](Actions/customer/otp.created.js) | One-Time Password request for a customer |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Category Related Webhooks/Actions
 
-| ** Action Name **                                   | ** Description **                                   |
-| --------------------------------------------------- | --------------------------------------------------- |
-| [category.created](app/Actions/Category/Created.js) | Creates a new category for products to be put under |
-| [category.updated](app/Actions/Category/Updated.js) | Add new or reform existing category details         |
+| ** Action Name **                               | ** Description **                                   |
+| ----------------------------------------------- | --------------------------------------------------- |
+| [category.created](Actions/category/created.js) | Creates a new category for products to be put under |
+| [category.updated](Actions/category/updated.js) | Add new or reform existing category details         |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Brand Related Webhooks/Actions
 
-| ** Action Name **                             | ** Description **                                                                    |
-| --------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [brand.created](app/Actions/Brand/Created.js) | Creates a new Brand.                                                                 |
-| [brand.updated](app/Actions/Brand/Updated.js) | Triggered when Information about a sepcific Brand is updated/refurbished/streamlined |
-| [brand.deleted](app/Actions/Brand/Deleted.js) | An existing brand is then deleted and removed from a store                           |
+| ** Action Name **                         | ** Description **                                                                    |
+| ----------------------------------------- | ------------------------------------------------------------------------------------ |
+| [brand.created](Actions/brand/created.js) | Creates a new Brand.                                                                 |
+| [brand.updated](Actions/brand/updated.js) | Triggered when Information about a sepcific Brand is updated/refurbished/streamlined |
+| [brand.deleted](Actions/brand/deleted.js) | An existing brand is then deleted and removed from a store                           |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Store Related Webhooks/Actions
 
-| ** Action Name **                                                | ** Description **                  |
-| ---------------------------------------------------------------- | ---------------------------------- |
-| [store.branch.created](app/Actions/Store/BranchCreated.js)       | Creates a new store.               |
-| [store.branch.updated](app/Actions/Store/BranchUpdated.js)       | Updates an existing branch         |
-| [store.branch.setDefault](app/Actions/Store/BranchSetDefault.js) | Sets for default a specific branch |
-| [store.branch.activated](app/Actions/Store/BranchActivated.js)   | Activates a disabled branch        |
-| [store.branch.deleted](app/Actions/Store/BranchDeleted.js)       | Deletes a branch                   |
-| [storetax.created](app/Actions/Store/TaxCreated.js)              | Creats a new Store Tax             |
+| ** Action Name **                                             | ** Description **                  |
+| ------------------------------------------------------------- | ---------------------------------- |
+| [store.branch.created](Actions/store/branch.created.js)       | Creates a new store.               |
+| [store.branch.updated](Actions/store/branch.updated.js)       | Updates an existing branch         |
+| [store.branch.setDefault](Actions/store/branch.setDefault.js) | Sets for default a specific branch |
+| [store.branch.activated](Actions/store/branch.activated.js)   | Activates a disabled branch        |
+| [store.branch.deleted](Actions/store/branch.deleted.js)       | Deletes a branch                   |
+| [storetax.created](Actions/store/tax.created.js)              | Creats a new Store Tax             |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Cart Related Webhooks/Actions
 
-| ** Action Name **                                            | ** Description **                               |
-| ------------------------------------------------------------ | ----------------------------------------------- |
-| [abandoned.cart](app/Actions/Miscellaneous/AbandonedCart.js) | Outputs a list of abandoned carts               |
-| [coupon.applied](app/Actions/Miscellaneous/CouponApplied.js) | Creates a discount code in the form of a coupon |
+| ** Action Name **                                        | ** Description **                               |
+| -------------------------------------------------------- | ----------------------------------------------- |
+| [abandoned.cart](Actions/abandoned/cart.js)              | Outputs a list of abandoned carts               |
+| [coupon.applied](Actions/Miscellaneous/CouponApplied.js) | Creates a discount code in the form of a coupon |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Special Offer Related Webhooks/Actions
 
-| ** Action Name **                                                        | ** Description **           |
-| ------------------------------------------------------------------------ | --------------------------- |
-| [specialoffer.created](app/Actions/Miscellaneous/SpecialofferCreated.js) | Creates a new special offer |
-| [specialoffer.updated](app/Actions/Miscellaneous/SpecialofferUpdated.js) | Updates a special offer     |
+| ** Action Name **                                       | ** Description **           |
+| ------------------------------------------------------- | --------------------------- |
+| [specialoffer.created](Actions/specialoffer/created.js) | Creates a new special offer |
+| [specialoffer.updated](Actions/specialoffer/updated.js) | Updates a special offer     |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Miscellaneous Related Webhooks/Actions
 
-| ** Action Name **                                        | ** Description **               |
-| -------------------------------------------------------- | ------------------------------- |
-| [review.added](app/Actions/Miscellaneous/ReviewAdded.js) | A product review has been added |
+| ** Action Name **                       | ** Description **               |
+| --------------------------------------- | ------------------------------- |
+| [review.added](Actions/review/added.js) | A product review has been added |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Support
 
 The team is always here to help you. Happen to face an issue? Want to report a bug? You can submit one here on Github using the [Issue Tracker](https://github.com/SallaApp/Salla-CLI/issues/new). If you still have any questions, please contact us via the [Telegram Bot](https://t.me/SallaSupportBot) or join in the Global Developer Community on [Telegram](https://t.me/salladev).
-    
+
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create.
