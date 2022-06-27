@@ -30,7 +30,7 @@
     "mysql2": "^2.3.3",
     "nunjucks": "^3.2.3",
     "passport": "~0.6.0",
-    "sequelize": "^6.21.0",
+    "sequelize": "^6.21.1",
     "typeorm": "^0.3.6",
     "validator": "^13.7.0"
   },
