@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+      - uses: anass-at/dependbot@master
         with:
           target: patch
-          github-token: ${{ secrets.DEPENDBOT_GH_TOKEN }}
+          github-token: ${{ secrets.PROTECTED_BRANCH_TOKEN }} 
