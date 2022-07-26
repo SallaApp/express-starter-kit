@@ -15,7 +15,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "salla app serve",
-    "dev":"node app.js"
+    "dev": "node app.js"
   },
   "license": "ISC",
   "dependencies": {
@@ -24,6 +24,7 @@
     "body-parser": "^1.20.0",
     "consolidate": "~0.16.0",
     "dotenv": "^16.0.1",
+    "envalid": "^7.3.1",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "mongoose": "^6.4.7",
