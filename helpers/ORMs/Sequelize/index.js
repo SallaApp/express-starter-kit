@@ -3,6 +3,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 const OauthTokens = require("./models/oauthtokens");
 const PasswordResets = require("./models/passwordresets");
 const User = require("./models/user");
+const env = require("../../../core/enviroment")
 
 // We export the sequelize connection instance to be used around our app.
 module.exports = {
@@ -11,10 +12,10 @@ module.exports = {
     // But for this example, we will just use a local SQLite database.
     // const sequelize = new Sequelize(process.env.DB_CONNECTION_URL);
     const sequelize = new Sequelize({
-      host: process.env.DATABASE_SERVER,
-      username: process.env.DATABASE_USERNAME,
-      password: process.env.DATABASE_PASSWORD,
-      database: process.env.DATABASE_NAME,
+      host: env.DATABASE_SERVER,
+      username: env.DATABASE_USERNAME,
+      password: env.DATABASE_PASSWORD,
+      database: env.DATABASE_NAME,
       dialect: "mysql",
       logging: true,
     });

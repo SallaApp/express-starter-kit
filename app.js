@@ -7,6 +7,7 @@ const consolidate = require("consolidate");
 const getUnixTimestamp = require("./helpers/getUnixTimestamp");
 const bodyParser = require("body-parser");
 const port = process.argv[2] || 8081;
+const env = require("./core/enviroment")
 
 /*
   Create a .env file in the root directory of your project. 
@@ -21,7 +22,7 @@ const {
   SALLA_OAUTH_CLIENT_REDIRECT_URI,
   SALLA_WEBHOOK_SECRET,
   SALLA_DATABASE_ORM,
-} = process.env;
+} = env;
 
 // Import Salla APIs
 const SallaAPIFactory = require("@salla.sa/passport-strategy");
