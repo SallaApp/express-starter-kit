@@ -3,7 +3,7 @@
 <br />
 <div align="center"> 
   <a href="https://salla.dev"> 
-    <img src="https://salla.dev/wp-content/uploads/2023/03/2-Dark.png" alt="Logo"> 
+    <img src="https://salla.dev/wp-content/uploads/2023/03/1-Light.png" alt="Logo"> 
   </a>
   <h1 align="center">Salla Apps Starter Kit</h1>
   <p align="center">
