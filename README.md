@@ -274,11 +274,11 @@ salla app create-webhook <event.name>
 
 <hr>
 
-You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant/ZG9jOjI0NTE3NDg1-webhook#list-of-events) as follows:
+> You may find the supported [Webhook events](https://docs.salla.dev/doc-421119/?nav=1#list-of-salla-store-events) as follows:
 
 #### Order Related Webhooks/Actions
 
-| ** Action Name **                                                             | ** Description **                                                            |
+| **Action Name**                                                             | **Description**                                                            |
 | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | [order.created](Actions/order/created.js)                                     | This indicates a singular order has been created                             |
 | [order.updated](Actions/order/updated.js)                                     | Details, data and/or content of a specific order have been refreshed updated |
@@ -302,7 +302,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 #### Product Related Webhooks/Actions
 
-| ** Action Name **                                       | ** Description **                                                                    |
+| **Action Name**                                       | **Description**                                                                    |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | [product.created](Actions/product/created.js)           | A new product is created. Payload of the new product are to accompanying the product |
 | [product.updated](Actions/product/updated.js)           | Add/Modify details of a product                                                      |
@@ -314,7 +314,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 #### Shipping Companies Related Webhooks/Actions
 
-| ** Action Name **                                               | ** Description **                                                                     |
+| **Action Name**                                               | **Description**                                                                     |
 | --------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | [shipping.zone.created](Actions/shipping/zone.created.js)       | This is triggered when a shipping zone has been created for a custom shipping company |
 | [shipping.zone.updated](Actions/shipping/zone.updated.js)       | This is triggered when a shipping zone has been updated for a custom shipping company |
@@ -326,7 +326,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 #### Customer Related Webhooks/Actions
 
-| ** Action Name **                                       | ** Description **                        |
+| **Action Name**                                       | **Description**                        |
 | ------------------------------------------------------- | ---------------------------------------- |
 | [customer.created](Actions/customer/created.js)         | Create a new customer record             |
 | [customer.updated](Actions/customer/updated.js)         | Update details for a customer            |
@@ -337,7 +337,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 #### Category Related Webhooks/Actions
 
-| ** Action Name **                               | ** Description **                                   |
+| **Action Name**                               | **Description**                                   |
 | ----------------------------------------------- | --------------------------------------------------- |
 | [category.created](Actions/category/created.js) | Creates a new category for products to be put under |
 | [category.updated](Actions/category/updated.js) | Add new or reform existing category details         |
@@ -346,7 +346,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 #### Brand Related Webhooks/Actions
 
-| ** Action Name **                         | ** Description **                                                                    |
+| **Action Name**                         | **Description**                                                                    |
 | ----------------------------------------- | ------------------------------------------------------------------------------------ |
 | [brand.created](Actions/brand/created.js) | Creates a new Brand.                                                                 |
 | [brand.updated](Actions/brand/updated.js) | Triggered when Information about a sepcific Brand is updated/refurbished/streamlined |
@@ -356,7 +356,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 #### Store Related Webhooks/Actions
 
-| ** Action Name **                                             | ** Description **                  |
+| **Action Name**                                             | **Description**                  |
 | ------------------------------------------------------------- | ---------------------------------- |
 | [store.branch.created](Actions/store/branch.created.js)       | Creates a new store.               |
 | [store.branch.updated](Actions/store/branch.updated.js)       | Updates an existing branch         |
@@ -369,7 +369,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 #### Cart Related Webhooks/Actions
 
-| ** Action Name **                                        | ** Description **                               |
+| **Action Name**                                        | **Description**                               |
 | -------------------------------------------------------- | ----------------------------------------------- |
 | [abandoned.cart](Actions/abandoned/cart.js)              | Outputs a list of abandoned carts               |
 | [coupon.applied](Actions/Miscellaneous/CouponApplied.js) | Creates a discount code in the form of a coupon |
@@ -387,7 +387,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 #### Miscellaneous Related Webhooks/Actions
 
-| ** Action Name **                       | ** Description **               |
+| **Action Name**                       | **Description**               |
 | --------------------------------------- | ------------------------------- |
 | [review.added](Actions/review/added.js) | A product review has been added |
 
@@ -395,7 +395,7 @@ You may find the supported [Webhook events](https://docs.salla.dev/docs/merchant
 
 ## Support
 
-The team is always here to help you. Happen to face an issue? Want to report a bug? You can submit one here on Github using the [Issue Tracker](https://github.com/SallaApp/Salla-CLI/issues/new). If you still have any questions, please contact us via the [Telegram Bot](https://t.me/SallaSupportBot) or join in the Global Developer Community on [Telegram](https://t.me/salladev).
+The team is always here to help you. Happen to face an issue? Want to report a bug? You can submit one here on Github using the [Issue Tracker](https://github.com/SallaApp/Salla-CLI/issues/new). If you still have any questions, please contact us by joining the Global Developer Community on [Telegram](https://t.me/salladev) or via [Support Email](mailto:support@salla.dev).
 
 <!-- CONTRIBUTING -->
 
