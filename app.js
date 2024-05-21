@@ -62,12 +62,13 @@ SallaAPI.onAuth(async (accessToken, refreshToken, expires_in, data) => {
       });
       await SallaDatabase.saveOauth(
         {
-          merchant: data.store.id,
+          merchant: data.id,
+          email: data.email,
           access_token: accessToken,
           expires_in: expires_in,
           refresh_token: refreshToken,
+          user_id
         },
-        user_id
       );
     })
     .catch((err) => {

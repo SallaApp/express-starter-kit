@@ -1,5 +1,4 @@
-///
-
+const getUnixTimestamp = require("../helpers/getUnixTimestamp");
 class SallaDatabase {
   constructor(DATABASE_ORM) {
     this.Database = require("../helpers/ORMs/" + DATABASE_ORM);
@@ -74,16 +73,12 @@ class SallaDatabase {
     if (this.DATABASE_ORM == "Sequelize") {
       if (
         // if not found then create new user
-        !(await this.connection.models.User.findOne({
+        (await this.connection.models.User.findOne({
           where: { email: data.email },
         }))
       ) {
         this.connection.models.OauthTokens.create({
-          user_id: user_id,
-          merchant: data.store.id,
-          access_token: data.accessToken,
-          expires_in: data.expires_in,
-          refresh_token: data.refreshToken,
+          ...data
         })
           .then((data) => {})
           .catch((err) => {
