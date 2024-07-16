@@ -6,15 +6,20 @@ const username = process.env.DATABASE_USERNAME; // REPLACE WITH YOUR DB USERNAME
 const password = process.env.DATABASE_PASSWORD; // REPLACE WITH YOUR DB PASSWORD
 require("./schemas/users");
 require("./schemas/oauthtokens");
+
+
+
+console.log(   `mongodb+srv://${username}:${password}@${server}/${database}`)
+
 class Database {
   constructor() {
     this.Mongoose = mongoose;
     this._connect();
   }
-
   _connect() {
     this.Mongoose.connect(
-      `mongodb+srv://${username}:${password}@${server}/${database}`
+      "mongodb://localhost:27017/salla-db"
+      // `mongodb+srv://${username}:${password}@${server}/${database}`
     )
       .then(() => {
         console.log("Database connection successful");

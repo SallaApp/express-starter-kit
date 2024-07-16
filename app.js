@@ -6,7 +6,7 @@ const passport = require("passport");
 const consolidate = require("consolidate");
 const getUnixTimestamp = require("./helpers/getUnixTimestamp");
 const bodyParser = require("body-parser");
-const port = process.argv[2] || 8081;
+const port = process.argv[2] || 8082;
 
 /*
   Create a .env file in the root directory of your project. 
@@ -59,15 +59,15 @@ SallaAPI.onAuth(async (accessToken, refreshToken, expires_in, data) => {
         verified_at: getUnixTimestamp(),
         password: "",
         remember_token: "",
-      });
+      }); 
       await SallaDatabase.saveOauth(
         {
-          merchant: data.store.id,
+          merchant: data.merchant.id,
           access_token: accessToken,
           expires_in: expires_in,
           refresh_token: refreshToken,
+          user_id
         },
-        user_id
       );
     })
     .catch((err) => {
@@ -207,8 +207,10 @@ app.get("/customers", ensureAuthenticated, async function (req, res) {
 //   logout from passport
 app.get("/logout", function (req, res) {
   SallaAPI.logout();
-  req.logout();
-  res.redirect("/");
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect("/");
+  });
 });
 
 app.listen(port, function () {
