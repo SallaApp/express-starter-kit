@@ -7,14 +7,35 @@ class SallaDatabase {
   }
   async connect() {
     try {
-      this.connection = await this.Database.connect();
+      this.connection = this.connection  || await this.Database.connect();
       return this.connection;
     } catch (err) {
       console.log("Error connecting to database: ", err);
       return null;
     }
   }
-  async saveUser(data) {
+  async retrieveUser(data,includeRelatedData) {
+    if (this.DATABASE_ORM == "TypeORM") {
+      var userRepository = this.connection.getRepository("User");
+      userRepository
+    }
+    if (this.DATABASE_ORM == "Sequelize") {
+      return await this.connection.models.User.findOne({
+        where: { ...data },
+      })
+    }
+    if (this.DATABASE_ORM == "Mongoose") {
+    return includeRelatedData ?
+      await this.connection.Mongoose.models.User.findOne(data).populate({
+        path: 'oauthId',
+        select: 'access_token' 
+    }):
+      await this.connection.Mongoose.models.User.findOne(data) 
+
+    }
+
+  }
+    async saveUser(data) {
     if (this.DATABASE_ORM == "TypeORM") {
       var userRepository = this.connection.getRepository("User");
       userRepository
@@ -48,15 +69,10 @@ class SallaDatabase {
            data ,
           { upsert: true, new: true }
         )
-      //  userObj = await this.connection.Mongoose.models.User(data)
-      //   await userObj.save();
-      // console.log(userObj)
         console.log("user has been created")
         return userObj._id;
       } catch (err) { 
-        // if(err.code=="11000"){
-        //   return  (await this.connection.Mongoose.models.User.findOne({ email:data.email }))._id
-        // }
+         
       }
     }
   }
@@ -86,11 +102,17 @@ class SallaDatabase {
           { user: user_id },
           { user: user_id, ...data },
           { upsert: true, new: true }
-          ).then(results => {
+          ).then(async results => {
+            await this.connection.Mongoose.models.User.findOneAndUpdate(
+              { _id: user_id },
+              { $set: {
+                oauthId: results._id
+              } },
+              {  new: true }
+            )
             return results
           });
       } catch (err) {
-        console.log(err)
       }
     }
   }

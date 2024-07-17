@@ -155,8 +155,26 @@ app.get(
 // GET /
 // render the index page
 
-app.get("/", function (req, res) {
-  res.render("index.html", { user: req.user, isLogin: req.user });
+app.get("/", async function (req, res) {
+  let userDetails = { 
+    user: req.user, 
+    isLogin: req.user 
+  }
+  if (req.user){
+    
+    const userFromDB = await SallaDatabase.retrieveUser({ email: req.user.email }, true);
+    const accessToken = userFromDB.oauthId.access_token;
+
+    const userFromAPI = await SallaAPI.getResourceOwner(accessToken);
+
+    // Merge user details with additional information from the API
+    userDetails = { ...userDetails, ...userFromAPI };
+     // mind you `req.user` content is almost the same as `user`,
+     // the main purpose of calling  `await SallaAPI.getResourceOwner(access_token) `
+     // is to show how to make calls with the access_toke
+    
+  }
+  res.render("index.html", userDetails);
 });
 
 // GET /account
