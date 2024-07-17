@@ -8,18 +8,18 @@ require("./schemas/users");
 require("./schemas/oauthtokens");
 
 
-
+const mongoServer = server == "localhost" ?
+                  `mongodb://${server}:27017/${database}` :
+                   `mongodb+srv://${username}:${password}@${server}/${database}`
 
 class Database {
   constructor() {
     this.Mongoose = mongoose;
     this._connect();
+
   }
   _connect() {
-    this.Mongoose.connect(
-      "mongodb://localhost:27017/salla-db"
-      // `mongodb+srv://${username}:${password}@${server}/${database}`
-    )
+    this.Mongoose.connect(mongoServer )
       .then(() => {
         console.log("Database connection successful");
       })
