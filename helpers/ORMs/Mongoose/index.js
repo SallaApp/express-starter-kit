@@ -9,7 +9,6 @@ require("./schemas/oauthtokens");
 
 
 
-console.log(   `mongodb+srv://${username}:${password}@${server}/${database}`)
 
 class Database {
   constructor() {

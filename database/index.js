@@ -87,7 +87,6 @@ class SallaDatabase {
           { user: user_id, ...data },
           { upsert: true, new: true }
           ).then(results => {
-            console.log(results);
             return results
           });
       } catch (err) {
