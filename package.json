@@ -24,7 +24,7 @@
     "body-parser": "1.20.3",
     "consolidate": "~0.16.0",
     "dotenv": "16.4.5",
-    "express": "4.20.0",
+    "express": "4.21.1",
     "express-session": "1.18.0",
     "mongoose": "6.13.1",
     "mysql2": "2.3.3",
