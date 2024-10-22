@@ -1,5 +1,5 @@
 /**
- *  this function is exeucted on "product.deleted" action triggered by Salla .
+ *  this function is executed on "product.deleted" action triggered by Salla .
  *
  * Action Body received from Salla
  * @param {Object} eventBody

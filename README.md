@@ -95,9 +95,9 @@ The starter App comes with an easy _1-command step_ that does the complete setup
 - Create a Partner account at [Salla Partner Portal](https://salla.partners/)
 - Create your App in [Salla Partner Portal](https://salla.dev/blog/create-your-first-app-on-salla-developer-portal/)
 
-  > From your App dashboard at [Salla Partner Portal](https://salla.partners/), you will be able to get your App's _Client ID, Client Secret Key and Webhook Secret Key_ which you will use later duraing the setup process.
+  > From your App dashboard at [Salla Partner Portal](https://salla.partners/), you will be able to get your App's _Client ID, Client Secret Key and Webhook Secret Key_ which you will use later during the setup process.
 
-- For EpxressJS compatibility : ` NodeJS >= 12.x.x, Node Package Manager and it support any Database [MySQL,MongoDB,PostgreSQL]`
+- For ExpressJS compatibility : ` NodeJS >= 12.x.x, Node Package Manager and it support any Database [MySQL,MongoDB,PostgreSQL]`
 
 That is all!
 
@@ -118,7 +118,7 @@ The installation process is straightforward as you will see in the below steps.
 
 With [Salla CLI](https://github.com/SallaApp/Salla-CLI) installed, **run** the following command to create your Express starter app project: `salla app create` and follow on-screen instructions.
 
-List of existing apps assocaited to your account will be displayed as well as an option to create your app on [Salla Partners Portal](https://salla.partners/). Afterwards, you will be presented with easy-to fill in information to create your app.
+List of existing apps associated to your account will be displayed as well as an option to create your app on [Salla Partners Portal](https://salla.partners/). Afterwards, you will be presented with easy-to fill in information to create your app.
 
 ![Salla App Create Command](https://i.ibb.co/92tKgZz/Clean-Shot-2021-12-27-at-21-31-15.gif)
 
@@ -143,7 +143,7 @@ List of existing apps assocaited to your account will be displayed as well as an
 
 ## Configure Authorization Modes <span id='auth-modes'>
 
-While creating your App in the [Salla Partners Portal](https://salla.partners/), you will see that Salla provids two methods for the OAuth protocol, which are the `Easy Mode` and the `Custom Mode`.
+While creating your App in the [Salla Partners Portal](https://salla.partners/), you will see that Salla provides two methods for the OAuth protocol, which are the `Easy Mode` and the `Custom Mode`.
 
 > During the setup process, the default _OAuth protocol_ will be set to the `Easy Mode`, which can be configured from the file [`.env`](.env).
 > All of the setup's values/keys are stored in the `.env` file as we can see in the below image.
@@ -349,7 +349,7 @@ salla app create-webhook <event.name>
 | **Action Name**                         | **Description**                                                                    |
 | ----------------------------------------- | ------------------------------------------------------------------------------------ |
 | [brand.created](Actions/brand/created.js) | Creates a new Brand.                                                                 |
-| [brand.updated](Actions/brand/updated.js) | Triggered when Information about a sepcific Brand is updated/refurbished/streamlined |
+| [brand.updated](Actions/brand/updated.js) | Triggered when Information about a specific Brand is updated/refurbished/streamlined |
 | [brand.deleted](Actions/brand/deleted.js) | An existing brand is then deleted and removed from a store                           |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -363,7 +363,7 @@ salla app create-webhook <event.name>
 | [store.branch.setDefault](Actions/store/branch.setDefault.js) | Sets for default a specific branch |
 | [store.branch.activated](Actions/store/branch.activated.js)   | Activates a disabled branch        |
 | [store.branch.deleted](Actions/store/branch.deleted.js)       | Deletes a branch                   |
-| [storetax.created](Actions/store/tax.created.js)              | Creats a new Store Tax             |
+| [storetax.created](Actions/store/tax.created.js)              | Creates a new Store Tax            |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
