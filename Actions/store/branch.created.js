@@ -1,5 +1,5 @@
 /**
- *  this function is exeucted on "store.branch.created" action triggered by Salla .
+ *  this function is executed on "store.branch.created" action triggered by Salla .
  *
  * Action Body received from Salla
  * @param {Object} eventBody

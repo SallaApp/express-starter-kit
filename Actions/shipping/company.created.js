@@ -1,5 +1,5 @@
 /**
- *  this function is exeucted on "shipping.company.created" action triggered by Salla .
+ *  this function is executed on "shipping.company.created" action triggered by Salla .
  *
  * Action Body received from Salla
  * @param {Object} eventBody

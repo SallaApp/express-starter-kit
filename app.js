@@ -30,7 +30,7 @@ const SallaWebhook = require("@salla.sa/webhooks-actions");
 
 SallaWebhook.setSecret(SALLA_WEBHOOK_SECRET);
 
-// Add Listners
+// Add Listeners
 SallaWebhook.on("app.installed", (eventBody, userArgs) => {
   // handel app.installed event
 });
@@ -48,7 +48,7 @@ const SallaAPI = new SallaAPIFactory({
   callbackURL: SALLA_OAUTH_CLIENT_REDIRECT_URI,
 });
 
-// set Listner on auth success
+// set Listener on auth success
 SallaAPI.onAuth(async (accessToken, refreshToken, expires_in, data) => {
   SallaDatabase.connect()
     .then(async (connection) => {
