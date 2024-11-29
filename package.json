@@ -27,7 +27,7 @@
     "express": "4.21.1",
     "express-session": "1.18.1",
     "mongoose": "8.7.2",
-    "mysql2": "2.3.3",
+    "mysql2": "3.11.5",
     "nunjucks": "^3.2.4",
     "passport": "~0.6.0",
     "sequelize": "6.37.4",
