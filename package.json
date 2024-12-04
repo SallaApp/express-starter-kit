@@ -23,7 +23,7 @@
     "@salla.sa/passport-strategy": "^1.0.6",
     "body-parser": "1.20.3",
     "consolidate": "~0.16.0",
-    "dotenv": "16.4.5",
+    "dotenv": "16.4.7",
     "express": "4.21.1",
     "express-session": "1.18.1",
     "mongoose": "8.7.2",
