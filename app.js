@@ -34,7 +34,7 @@ SallaWebhook.setSecret(SALLA_WEBHOOK_SECRET);
 SallaWebhook.on("app.installed", (eventBody, userArgs) => {
   // handel app.installed event
 });
-SallaWebhook.on("app.stroe.authorize", (eventBody, userArgs) => {
+SallaWebhook.on("app.store.authorize", (eventBody, userArgs) => {
   // handel app.installed event
 });
 SallaWebhook.on("all", (eventBody, userArgs) => {
