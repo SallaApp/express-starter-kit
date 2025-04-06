@@ -6,7 +6,7 @@ const passport = require("passport");
 const consolidate = require("consolidate");
 const getUnixTimestamp = require("./helpers/getUnixTimestamp");
 const bodyParser = require("body-parser");
-const port = process.argv[2] || 8081;
+const port = process.argv[2] || 8082;
 
 /*
   Create a .env file in the root directory of your project. 
