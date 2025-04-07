@@ -21,7 +21,7 @@
   "dependencies": {
     "@salla.sa/webhooks-actions": "^1.0",
     "@salla.sa/passport-strategy": "^1.0.6",
-    "body-parser": "1.20.3",
+    "body-parser": "2.2.0",
     "consolidate": "~0.16.0",
     "dotenv": "16.4.7",
     "express": "4.21.2",
