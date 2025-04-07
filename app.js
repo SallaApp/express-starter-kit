@@ -34,7 +34,7 @@ SallaWebhook.setSecret(SALLA_WEBHOOK_SECRET);
 SallaWebhook.on("app.installed", (eventBody, userArgs) => {
   // handel app.installed event
 });
-SallaWebhook.on("app.stroe.authorize", (eventBody, userArgs) => {
+SallaWebhook.on("app.store.authorize", (eventBody, userArgs) => {
   // handel app.installed event
 });
 SallaWebhook.on("all", (eventBody, userArgs) => {
@@ -231,9 +231,10 @@ app.get("/logout", function (req, res) {
   });
 });
 
-app.listen(port, function () {
-  console.log("Listening on port " + port);
+app.listen(port, () => {
+  console.log(`🚀 Server is running on http://localhost:${port}`);
 });
+
 
 // Simple route middleware to ensure user is authenticated.
 //   Use this route middleware on any resource that needs to be protected.  If
