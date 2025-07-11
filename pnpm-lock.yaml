@@ -30,8 +30,8 @@ importers:
         specifier: 1.18.1
         version: 1.18.1
       mongoose:
-        specifier: 8.16.0
-        version: 8.16.0
+        specifier: 8.16.3
+        version: 8.16.3
       mysql2:
         specifier: 3.14.1
         version: 3.14.1
@@ -737,8 +737,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@8.16.0:
-    resolution: {integrity: sha512-gLuAZsbwY0PHjrvfuXvUkUq9tXjyAjN3ioXph5Y6Seu7/Uo8xJaM+rrMbL/x34K4T3UTgtXRyfoq1YU16qKyIw==}
+  mongoose@8.16.3:
+    resolution: {integrity: sha512-p2JOsRQG7j0vXhLpsWw5Slm2VnDeJK8sRyqSyegk5jQujuP9BTOZ1Di9VX/0lYfBhZ2DpAExi51QTd4pIqSgig==}
     engines: {node: '>=16.20.1'}
 
   mpath@0.9.0:
@@ -1745,7 +1745,7 @@ snapshots:
       bson: 6.10.4
       mongodb-connection-string-url: 3.0.2
 
-  mongoose@8.16.0:
+  mongoose@8.16.3:
     dependencies:
       bson: 6.10.4
       kareem: 2.6.3
