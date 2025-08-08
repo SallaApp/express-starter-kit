@@ -30,8 +30,8 @@ importers:
         specifier: 1.18.1
         version: 1.18.1
       mongoose:
-        specifier: 8.16.0
-        version: 8.16.0
+        specifier: 8.17.1
+        version: 8.17.1
       mysql2:
         specifier: 3.14.1
         version: 3.14.1
@@ -46,7 +46,7 @@ importers:
         version: 6.37.7(mysql2@3.14.1)
       typeorm:
         specifier: 0.3.22
-        version: 0.3.22(mongodb@6.17.0)(mysql2@3.14.1)(reflect-metadata@0.2.2)
+        version: 0.3.22(mongodb@6.18.0)(mysql2@3.14.1)(reflect-metadata@0.2.2)
       validator:
         specifier: 13.15.0
         version: 13.15.0
@@ -710,8 +710,8 @@ packages:
   mongodb-connection-string-url@3.0.2:
     resolution: {integrity: sha512-rMO7CGo/9BFwyZABcKAWL8UJwH/Kc2x0g72uhDWzG48URRax5TCIcJ7Rc3RZqffZzO/Gwff/jyKwCU9TN8gehA==}
 
-  mongodb@6.17.0:
-    resolution: {integrity: sha512-neerUzg/8U26cgruLysKEjJvoNSXhyID3RvzvdcpsIi2COYM3FS3o9nlH7fxFtefTb942dX3W9i37oPfCVj4wA==}
+  mongodb@6.18.0:
+    resolution: {integrity: sha512-fO5ttN9VC8P0F5fqtQmclAkgXZxbIkYRTUi1j8JO6IYwvamkhtYDilJr35jOPELR49zqCJgXZWwCtW7B+TM8vQ==}
     engines: {node: '>=16.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.188.0
@@ -737,8 +737,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@8.16.0:
-    resolution: {integrity: sha512-gLuAZsbwY0PHjrvfuXvUkUq9tXjyAjN3ioXph5Y6Seu7/Uo8xJaM+rrMbL/x34K4T3UTgtXRyfoq1YU16qKyIw==}
+  mongoose@8.17.1:
+    resolution: {integrity: sha512-aodS4cacux5caoxB5ErEwRmrafIUsVRJxHnvP7URnSUnTenr32j1qBVV+KjYxryyLSisQkxglAFF69TNLeZTLg==}
     engines: {node: '>=16.20.1'}
 
   mpath@0.9.0:
@@ -1739,17 +1739,17 @@ snapshots:
       '@types/whatwg-url': 11.0.5
       whatwg-url: 14.2.0
 
-  mongodb@6.17.0:
+  mongodb@6.18.0:
     dependencies:
       '@mongodb-js/saslprep': 1.3.0
       bson: 6.10.4
       mongodb-connection-string-url: 3.0.2
 
-  mongoose@8.16.0:
+  mongoose@8.17.1:
     dependencies:
       bson: 6.10.4
       kareem: 2.6.3
-      mongodb: 6.17.0
+      mongodb: 6.18.0
       mpath: 0.9.0
       mquery: 5.0.0
       ms: 2.1.3
@@ -2098,7 +2098,7 @@ snapshots:
       media-typer: 1.1.0
       mime-types: 3.0.1
 
-  typeorm@0.3.22(mongodb@6.17.0)(mysql2@3.14.1)(reflect-metadata@0.2.2):
+  typeorm@0.3.22(mongodb@6.18.0)(mysql2@3.14.1)(reflect-metadata@0.2.2):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 3.17.0
@@ -2115,7 +2115,7 @@ snapshots:
       uuid: 11.1.0
       yargs: 17.7.2
     optionalDependencies:
-      mongodb: 6.17.0
+      mongodb: 6.18.0
       mysql2: 3.14.1
     transitivePeerDependencies:
       - supports-color
