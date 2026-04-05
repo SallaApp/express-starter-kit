@@ -23,16 +23,16 @@
     "@salla.sa/webhooks-actions": "^1.0",
     "body-parser": "2.2.0",
     "consolidate": "~0.16.0",
-    "dotenv": "17.2.0",
-    "express": "5.1.0",
+    "dotenv": "17.4.0",
+    "express": "5.2.1",
     "express-session": "1.18.1",
-    "mongoose": "8.16.4",
-    "mysql2": "3.14.2",
+    "mongoose": "9.3.3",
+    "mysql2": "3.20.0",
     "nunjucks": "^3.2.4",
     "passport": "~0.6.0",
     "sequelize": "6.37.7",
     "typeorm": "0.3.25",
-    "validator": "13.15.0"
+    "validator": "13.15.35"
   },
   "devDependencies": {
     "sequelize-cli": "^6.6.2"
