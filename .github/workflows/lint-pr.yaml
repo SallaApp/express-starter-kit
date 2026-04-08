@@ -1,0 +1,28 @@
+name: 'Lint PR'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - labeled
+      - unlabeled
+jobs:
+  title:
+    name: Validate PR title
+    runs-on: ${{ fromJson(vars.RUNS_ON) }}
+    steps:
+      - uses: SallaApp/.CI/lint-pr@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  branch:
+    name: Validate branch name
+    runs-on: ${{ fromJson(vars.RUNS_ON) }}
+    steps:
+      - uses: SallaApp/.CI/lint-branch@master
