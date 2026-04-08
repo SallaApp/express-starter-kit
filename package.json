@@ -21,20 +21,20 @@
   "dependencies": {
     "@salla.sa/passport-strategy": "^1.0.6",
     "@salla.sa/webhooks-actions": "^1.0",
-    "body-parser": "2.2.0",
+    "body-parser": "2.2.2",
     "consolidate": "~0.16.0",
     "dotenv": "17.4.0",
     "express": "5.2.1",
-    "express-session": "1.18.1",
-    "mongoose": "9.3.3",
+    "express-session": "1.19.0",
+    "mongoose": "9.4.1",
     "mysql2": "3.20.0",
     "nunjucks": "^3.2.4",
     "passport": "~0.6.0",
     "sequelize": "6.37.7",
-    "typeorm": "0.3.25",
+    "typeorm": "0.3.28",
     "validator": "13.15.35"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.6.2"
+    "sequelize-cli": "^6.6.5"
   }
 }
