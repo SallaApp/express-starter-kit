@@ -21,8 +21,8 @@ importers:
         specifier: ~0.16.0
         version: 0.16.0(lodash@4.17.21)(nunjucks@3.2.4)
       dotenv:
-        specifier: 16.5.0
-        version: 16.5.0
+        specifier: 17.4.2
+        version: 17.4.2
       express:
         specifier: 5.2.1
         version: 5.2.1
@@ -33,8 +33,8 @@ importers:
         specifier: 8.16.0
         version: 8.16.0
       mysql2:
-        specifier: 3.21.1
-        version: 3.21.1(@types/node@24.0.3)
+        specifier: 3.22.0
+        version: 3.22.0(@types/node@24.0.3)
       nunjucks:
         specifier: ^3.2.4
         version: 3.2.4
@@ -43,10 +43,10 @@ importers:
         version: 0.6.0
       sequelize:
         specifier: 6.37.8
-        version: 6.37.8(mysql2@3.21.1(@types/node@24.0.3))
+        version: 6.37.8(mysql2@3.22.0(@types/node@24.0.3))
       typeorm:
         specifier: 0.3.22
-        version: 0.3.22(mongodb@6.17.0)(mysql2@3.21.1(@types/node@24.0.3))(reflect-metadata@0.2.2)
+        version: 0.3.22(mongodb@6.17.0)(mysql2@3.22.0(@types/node@24.0.3))(reflect-metadata@0.2.2)
       validator:
         specifier: 13.15.35
         version: 13.15.35
@@ -450,6 +450,10 @@ packages:
     resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
     engines: {node: '>=12'}
 
+  dotenv@17.4.2:
+    resolution: {integrity: sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==}
+    engines: {node: '>=12'}
+
   dottie@2.0.6:
     resolution: {integrity: sha512-iGCHkfUc5kFekGiqhe8B/mdaurD+lakO9txNnTvKtA6PISrw86LgqHvRzWYPyoE2Ph5aMIrCw9/uko6XHTKCwA==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
@@ -765,8 +769,8 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  mysql2@3.21.1:
-    resolution: {integrity: sha512-vywGTUeqMwPQHJCWTWmmdIpcLfhU0UWIhOYbSWehqL+0Y/NTPGViM0wDtIgLuzqm5RqSygXKLJnxFGhQkhM1wg==}
+  mysql2@3.22.0:
+    resolution: {integrity: sha512-4jaJYBObj7FhD3lnZhqX1yDMuZN4mQNz+IolDySDXT7fbozMBpeGQNcuWXKUqo4ahkAEfkjUHPjnwuDI0/6VKw==}
     engines: {node: '>= 8.0'}
     peerDependencies:
       '@types/node': '>= 8'
@@ -1460,6 +1464,8 @@ snapshots:
 
   dotenv@16.5.0: {}
 
+  dotenv@17.4.2: {}
+
   dottie@2.0.6: {}
 
   dunder-proto@1.0.1:
@@ -1800,7 +1806,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  mysql2@3.21.1(@types/node@24.0.3):
+  mysql2@3.22.0(@types/node@24.0.3):
     dependencies:
       '@types/node': 24.0.3
       aws-ssl-profiles: 1.1.2
@@ -1988,7 +1994,7 @@ snapshots:
 
   sequelize-pool@7.1.0: {}
 
-  sequelize@6.37.8(mysql2@3.21.1(@types/node@24.0.3)):
+  sequelize@6.37.8(mysql2@3.22.0(@types/node@24.0.3)):
     dependencies:
       '@types/debug': 4.1.12
       '@types/validator': 13.15.2
@@ -2007,7 +2013,7 @@ snapshots:
       validator: 13.15.35
       wkx: 0.5.0
     optionalDependencies:
-      mysql2: 3.21.1(@types/node@24.0.3)
+      mysql2: 3.22.0(@types/node@24.0.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -2124,7 +2130,7 @@ snapshots:
       media-typer: 1.1.0
       mime-types: 3.0.1
 
-  typeorm@0.3.22(mongodb@6.17.0)(mysql2@3.21.1(@types/node@24.0.3))(reflect-metadata@0.2.2):
+  typeorm@0.3.22(mongodb@6.17.0)(mysql2@3.22.0(@types/node@24.0.3))(reflect-metadata@0.2.2):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 3.17.0
@@ -2142,7 +2148,7 @@ snapshots:
       yargs: 17.7.2
     optionalDependencies:
       mongodb: 6.17.0
-      mysql2: 3.21.1(@types/node@24.0.3)
+      mysql2: 3.22.0(@types/node@24.0.3)
     transitivePeerDependencies:
       - supports-color
 
