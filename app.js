@@ -1,5 +1,5 @@
 // Import Deps
-require("dotenv").config();
+require("dotenv").config({ quiet: true });
 const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
@@ -59,7 +59,7 @@ SallaAPI.onAuth(async (accessToken, refreshToken, expires_in, data) => {
         verified_at: getUnixTimestamp(),
         password: "",
         remember_token: "",
-      }); 
+      });
       await SallaDatabase.saveOauth(
         {
           merchant: data.merchant.id,
@@ -156,12 +156,12 @@ app.get(
 // render the index page
 
 app.get("/", async function (req, res) {
-  let userDetails = { 
-    user: req.user, 
-    isLogin: req.user 
+  let userDetails = {
+    user: req.user,
+    isLogin: req.user
   }
-  if (req.user){
-    
+  if (req.user) {
+
     const userFromDB = await SallaDatabase.retrieveUser({ email: req.user.email }, true);
     const accessToken = userFromDB.oauthId.access_token;
 
@@ -169,10 +169,10 @@ app.get("/", async function (req, res) {
 
     // Merge user details with additional information from the API
     userDetails = { ...userDetails, ...userFromAPI };
-     // mind you `req.user` content is almost the same as `user`,
-     // the main purpose of calling  `await SallaAPI.getResourceOwner(access_token) `
-     // is to show how to make calls with the access_toke
-    
+    // mind you `req.user` content is almost the same as `user`,
+    // the main purpose of calling  `await SallaAPI.getResourceOwner(access_token) `
+    // is to show how to make calls with the access_toke
+
   }
   res.render("index.html", userDetails);
 });
@@ -225,7 +225,7 @@ app.get("/customers", ensureAuthenticated, async function (req, res) {
 //   logout from passport
 app.get("/logout", function (req, res) {
   SallaAPI.logout();
-  req.logout(function(err) {
+  req.logout(function (err) {
     if (err) { return next(err); }
     res.redirect("/");
   });

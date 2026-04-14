@@ -14,8 +14,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "DOTENV_CONFIG_QUIET=true salla app serve",
-    "dev": "DOTENV_CONFIG_QUIET=true nodemon app.js"
+    "serve": "salla app serve",
+    "dev": "nodemon app.js"
   },
   "license": "ISC",
   "dependencies": {
