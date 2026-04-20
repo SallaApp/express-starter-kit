@@ -223,7 +223,7 @@ app.get("/customers", ensureAuthenticated, async function (req, res) {
 
 // GET /logout
 //   logout from passport
-app.get("/logout", function (req, res, next) {
+app.get("/logout", function (req, res) {
   SallaAPI.logout();
   req.logout(function (err) {
     if (err) { return next(err); }
