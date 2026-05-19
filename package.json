@@ -31,7 +31,7 @@
     "nunjucks": "^3.2.4",
     "passport": "~0.6.0",
     "sequelize": "6.37.8",
-    "typeorm": "0.3.22",
+    "typeorm": "1.0.0",
     "validator": "13.15.35"
   },
   "devDependencies": {
