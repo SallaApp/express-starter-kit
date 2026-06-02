@@ -17,6 +17,9 @@
     "serve": "salla app serve",
     "dev": "nodemon app.js"
   },
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "license": "ISC",
   "dependencies": {
     "@salla.sa/passport-strategy": "^1.0.6",
@@ -36,5 +39,8 @@
   },
   "devDependencies": {
     "sequelize-cli": "^6.6.5"
+  },
+  "overrides": {
+    "uuid": ">=11.1.1"
   }
 }
