@@ -1,8 +1,8 @@
-var typeorm = require("typeorm");
+var { DataSource } = require("typeorm");
 
 module.exports = {
   connect: () => {
-    return typeorm.createConnection({
+    var dataSource = new DataSource({
       type: "mysql",
       host: process.env.DATABASE_SERVER,
       //port: 5432,
@@ -12,5 +12,6 @@ module.exports = {
       synchronize: true,
       entities: [require("./entity/oAuthToken"), require("./entity/User")],
     });
+    return dataSource.initialize();
   },
 };
