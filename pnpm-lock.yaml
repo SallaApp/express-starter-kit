@@ -33,8 +33,8 @@ importers:
         specifier: 9.7.4
         version: 9.7.4
       mysql2:
-        specifier: 3.22.4
-        version: 3.22.4(@types/node@24.0.3)
+        specifier: 3.22.6
+        version: 3.22.6(@types/node@24.0.3)
       nunjucks:
         specifier: ^3.2.4
         version: 3.2.4
@@ -43,10 +43,10 @@ importers:
         version: 0.7.0
       sequelize:
         specifier: 6.37.8
-        version: 6.37.8(mysql2@3.22.4(@types/node@24.0.3))
+        version: 6.37.8(mysql2@3.22.6(@types/node@24.0.3))
       typeorm:
         specifier: 1.0.0
-        version: 1.0.0(mongodb@7.2.0)(mysql2@3.22.4(@types/node@24.0.3))
+        version: 1.0.0(mongodb@7.2.0)(mysql2@3.22.6(@types/node@24.0.3))
       validator:
         specifier: 13.15.35
         version: 13.15.35
@@ -772,8 +772,8 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  mysql2@3.22.4:
-    resolution: {integrity: sha512-CtXYlmL7ZamiYKbmqkamQHWJROUHSfm+f3kByzGfknw7kW51mcB2ouMUqYq1XfYxbXmnWo6RhPydx6OCqdgcmQ==}
+  mysql2@3.22.6:
+    resolution: {integrity: sha512-fPKmeDGUzvFP7bMD5SASlJ5zIgvCC4hbanTmhbUlEmhyrY1hR4Hi3xLOWgTd3luYjLVifx6uGvMNJ2m/LlqEpg==}
     engines: {node: '>= 8.0'}
     peerDependencies:
       '@types/node': '>= 8'
@@ -1054,8 +1054,8 @@ packages:
   sparse-bitfield@3.0.3:
     resolution: {integrity: sha512-kvzhi7vqKTfkh0PZU+2D2PIllw2ymqJKujUcyPMd9Y75Nv4nPbGJZXNhxsgdQab2BmlDct1YnfQCguEvHr7VsQ==}
 
-  sql-escaper@1.3.3:
-    resolution: {integrity: sha512-BsTCV265VpTp8tm1wyIm1xqQCS+Q9NHx2Sr+WcnUrgLrQ6yiDIvHYJV5gHxsj1lMBy2zm5twLaZao8Jd+S8JJw==}
+  sql-escaper@1.5.1:
+    resolution: {integrity: sha512-4toX5E1fQbBrpfXidaHnF0669nkAdETeIPTs2SUjxxD7RRIs9ICG4gtpmfc68JCEKehsdwLFqBu9VlQqZ1P1gg==}
     engines: {bun: '>=1.0.0', deno: '>=2.0.0', node: '>=12.0.0'}
 
   sql-highlight@6.1.0:
@@ -1826,7 +1826,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  mysql2@3.22.4(@types/node@24.0.3):
+  mysql2@3.22.6(@types/node@24.0.3):
     dependencies:
       '@types/node': 24.0.3
       aws-ssl-profiles: 1.1.2
@@ -1836,7 +1836,7 @@ snapshots:
       long: 5.3.2
       lru.min: 1.1.4
       named-placeholders: 1.1.6
-      sql-escaper: 1.3.3
+      sql-escaper: 1.5.1
 
   named-placeholders@1.1.6:
     dependencies:
@@ -2017,7 +2017,7 @@ snapshots:
 
   sequelize-pool@7.1.0: {}
 
-  sequelize@6.37.8(mysql2@3.22.4(@types/node@24.0.3)):
+  sequelize@6.37.8(mysql2@3.22.6(@types/node@24.0.3)):
     dependencies:
       '@types/debug': 4.1.12
       '@types/validator': 13.15.2
@@ -2036,7 +2036,7 @@ snapshots:
       validator: 13.15.35
       wkx: 0.5.0
     optionalDependencies:
-      mysql2: 3.22.4(@types/node@24.0.3)
+      mysql2: 3.22.6(@types/node@24.0.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -2115,7 +2115,7 @@ snapshots:
     dependencies:
       memory-pager: 1.5.0
 
-  sql-escaper@1.3.3: {}
+  sql-escaper@1.5.1: {}
 
   sql-highlight@6.1.0: {}
 
@@ -2187,7 +2187,7 @@ snapshots:
       media-typer: 1.1.0
       mime-types: 3.0.1
 
-  typeorm@1.0.0(mongodb@7.2.0)(mysql2@3.22.4(@types/node@24.0.3)):
+  typeorm@1.0.0(mongodb@7.2.0)(mysql2@3.22.6(@types/node@24.0.3)):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 4.3.1
@@ -2201,7 +2201,7 @@ snapshots:
       yargs: 18.1.0
     optionalDependencies:
       mongodb: 7.2.0
-      mysql2: 3.22.4(@types/node@24.0.3)
+      mysql2: 3.22.6(@types/node@24.0.3)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
