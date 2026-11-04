@@ -5,8 +5,9 @@ const session = require("express-session");
 const passport = require("passport");
 const consolidate = require("consolidate");
 const getUnixTimestamp = require("./helpers/getUnixTimestamp");
+const getPort = require("./helpers/getPort");
 const bodyParser = require("body-parser");
-const port = process.argv[2] || 8082;
+const port = getPort();
 
 /*
   Create a .env file in the root directory of your project. 
