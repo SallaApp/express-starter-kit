@@ -5,8 +5,16 @@ const session = require("express-session");
 const passport = require("passport");
 const consolidate = require("consolidate");
 const getUnixTimestamp = require("./helpers/getUnixTimestamp");
+const getPort = require("./helpers/getPort");
 const bodyParser = require("body-parser");
-const port = process.argv[2] || 8082;
+let port;
+try {
+  port = getPort();
+} catch (error) {
+  console.error(error.message);
+  console.error("Usage: node app.js [port] | -p <port> | --port <port>");
+  process.exit(1);
+}
 
 /*
   Create a .env file in the root directory of your project. 
