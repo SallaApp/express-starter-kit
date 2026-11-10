@@ -7,7 +7,14 @@ const consolidate = require("consolidate");
 const getUnixTimestamp = require("./helpers/getUnixTimestamp");
 const getPort = require("./helpers/getPort");
 const bodyParser = require("body-parser");
-const port = getPort();
+let port;
+try {
+  port = getPort();
+} catch (error) {
+  console.error(error.message);
+  console.error("Usage: node app.js [port] | -p <port> | --port <port>");
+  process.exit(1);
+}
 
 /*
   Create a .env file in the root directory of your project. 
